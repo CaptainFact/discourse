@@ -1,6 +1,7 @@
 databases:
 - name: discourse-db
   plan: starter
+  region: frankfurt
 services:
 - type: web
   name: discourse-web
@@ -10,6 +11,7 @@ services:
   dockerContext: ./web/v2.6.3
   autoDeploy: false
   healthCheckPath: /srv/status
+  region: frankfurt
   disk:
     name: discourse-data
     mountPath: /var/www/discourse/public/uploads
