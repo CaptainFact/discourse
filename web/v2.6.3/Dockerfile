@@ -24,6 +24,7 @@ RUN apt-get update && apt-get install -y \
     optipng \
     pngquant \
     postgresql-client \
+    rsync \
     vim
 RUN npm install -g svgo
 RUN bundle config set path vendor/bundle/ && bundle install
