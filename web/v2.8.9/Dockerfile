@@ -27,7 +27,7 @@ RUN apt-get update && apt-get install -y \
     rsync \
     vim
 RUN npm install -g svgo
-RUN bundle config set path vendor/bundle/ && bundle install
+RUN bundle config set path vendor/bundle/ && bundle lock --add-platform x86_64-linux && bundle install
 RUN gem install foreman
 
 # Configure NGINX
