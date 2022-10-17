@@ -6,7 +6,7 @@ ARG DISCOURSE_WORKER_CONCURRENCY
 
 ENV DISCOURSE_HOSTNAME=${CUSTOM_DOMAIN:-$RENDER_EXTERNAL_HOSTNAME}
 ENV RAILS_ENV=production
-ENV DISCOURSE_VERSION=v2.8.9
+ENV DISCOURSE_VERSION=v2.8.3
 ENV DISCOURSE_ROOT=/var/www/discourse
 ENV DISCOURSE_WORKER_CONCURRENCY=${DISCOURSE_WORKER_CONCURRENCY:-2}
 
@@ -27,7 +27,7 @@ RUN apt-get update && apt-get install -y \
     rsync \
     vim
 RUN npm install -g svgo
-RUN bundle config set path vendor/bundle/ && bundle lock --add-platform x86_64-linux && bundle install
+RUN bundle config set path vendor/bundle/ && bundle install
 RUN gem install foreman
 
 # Configure NGINX
